@@ -1,0 +1,20 @@
+﻿@model ZOO.Models.ViewModels.Esp
+@{
+    Layout = "Layoutcshtml";
+}
+<div class="especieficha1">
+
+    <img src="~/especies/@(Model.id).jpg" />
+    <div>
+        <h1>@Model.nombre</h1>
+        <p><label>Clase:</label><a href="~/Home/especies?id=@(Model.especie)">@Model.especie</a></p>
+        <p><label>Peso:</label>@Model.peso</p>
+        <p><label>Tamaño:</label>@Model.tamaño</p>
+        <p><label>Habitat:</label>@Model.habitad</p>
+        <p><label>Descripción:</label></p>
+        <p>@Model.descripcion</p>
+    </div>
+
+    <a href="~/Home/especies?id=@(Model.especie)">Regresar</a>
+
+</div>

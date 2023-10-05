@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "Layoutcshtml";
+}
+@model ZOO.Models.ViewModels.EspeciesVM
+<h1>
+    <img src="~/clases/@(Model.id).png" /> @(Model.nombre)
+</h1>
+
+<div class="listaEspecies2">
+    @foreach(var LsEspecies in Model.ListaAni)
+    {
+    <a href="~/Home/especie?id=@(LsEspecies.nombre)">
+        <img src="~/especies/@(LsEspecies.id).jpg" title="@(LsEspecies.nombre)"/>
+    </a>   
+    }
+</div>
+
+<script>
+
+    var c = document.querySelector("main h1 img").cloneNode();
+    document.querySelector("main h1").appendChild(c);
+</script>
+

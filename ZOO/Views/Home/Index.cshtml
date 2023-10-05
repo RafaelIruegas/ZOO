@@ -1,0 +1,24 @@
+﻿@model ZOO.Models.ViewModels.IndexVM
+@{
+	Layout = "Layoutcshtml";
+}
+
+<div class="slides">
+    <img src="~/images/carousel1.jpg" />
+</div>
+
+<h1>Clasificación de los vertebrados</h1>
+
+<div class="clases"> 
+    @foreach(var ClEspecie in Model.Ani2)
+    {        
+    <div>
+        <a href="~/Home/especies?Id=@(ClEspecie.Nombre)">
+            <img src="~/clases/@(ClEspecie.Id).jpg" />
+            <h1>@ClEspecie.Nombre</h1>
+            <p>@ClEspecie.Descripcion</p>
+        </a>
+    </div>
+    }
+</div>
+
